@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strength Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predict LSF Strength</h1>
+        <form action="/predict" method="POST">
+            {% for feature in ['Sio2', 'Al203', 'Fe203','Cao','Mgo','So3','Na2o','K20','Cl','Sm','Am','Loi'] %}
+            <label for="{{ feature }}">{{ feature }}:</label>
+            <input type="number" id="{{ feature }}" name="{{ feature }}" required step ="0.001"><br><br>
+            {% endfor %}
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h2>Result: {{ result }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
