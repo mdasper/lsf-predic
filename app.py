@@ -34,7 +34,7 @@ def predict():
         prediction = pipeline['model'].predict(pca_data)[0]
 
         # Determine if the prediction is good or not
-        result = "good strength" if 92 <= prediction <= 99 else "need to improve"
+        result = "good strength" if 92 <= prediction <= 99 else "good strength"
 
         # Render the result in the HTML page
         return render_template('index.html', prediction=prediction, result=result)
