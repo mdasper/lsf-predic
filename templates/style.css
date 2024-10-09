@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #87CEEB; /* Sky blue background */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    color: #000; /* Black text color */
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: #1A5276; /* Dark blue color for heading */
+    font-size: 32px;
+    font-family: 'Georgia', serif;
+}
+
+form {
+    background: #FFFFFF; /* White form background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for form */
+    color: #000;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #1A5276; /* Dark blue label text */
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #B0C4DE; /* Light Steel Blue border */
+    border-radius: 5px;
+    color: #000;
+    background-color: #F0F8FF; /* Alice Blue input background */
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #1A5276; /* Dark blue button background */
+    color: #FFFFFF; /* White text for button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #2980B9; /* Lighter blue on hover */
+}
+
+.result {
+    margin-top: 20px;
+    background: #E1F5FE; /* Light blue result box */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    color: #1A5276; /* Dark blue text for result */
+    font-weight: bold;
+    font-size: 18px;
+}
+
