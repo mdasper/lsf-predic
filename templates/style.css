@@ -20,7 +20,7 @@ h1 {
 }
 
 form {
-    background: #fff;
+    background:#87CEEB;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
@@ -46,7 +46,7 @@ input[type="submit"] {
     display: block;
     width: 100%;
     padding: 10px;
-    background: #333;
+    background: #87CEEB;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -55,7 +55,7 @@ input[type="submit"] {
 
 .result {
     margin-top: 20px;
-    background: #e1f5fe;
+    background: #87CEEB;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
