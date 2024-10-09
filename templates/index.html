@@ -3,23 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strength Prediction</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>LSF Strength Prediction</title>
+    <!-- Embedded CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #87CEEB; /* Sky blue background */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: #000; /* Black text color */
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            overflow: hidden;
+            padding-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1A5276; /* Dark blue color for heading */
+            font-size: 32px;
+            font-family: 'Georgia', serif;
+        }
+
+        form {
+            background: #FFFFFF; /* White form background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for form */
+            color: #000;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #1A5276; /* Dark blue label text */
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #B0C4DE; /* Light Steel Blue border */
+            border-radius: 5px;
+            color: #000;
+            background-color: #F0F8FF; /* Alice Blue input background */
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #1A5276; /* Dark blue button background */
+            color: #FFFFFF; /* White text for button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #2980B9; /* Lighter blue on hover */
+        }
+
+        .result {
+            margin-top: 20px;
+            background: #E1F5FE; /* Light blue result box */
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            color: #1A5276; /* Dark blue text for result */
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Predict LSF Strength</h1>
-        <form action="/predict" method="POST">
-            {% for feature in ['Sio2', 'Al203', 'Fe203','Cao','Mgo','So3','Na2o','K20','Cl','Sm','Am','Loi'] %}
-            <label for="{{ feature }}">{{ feature }}:</label>
-            <input type="number" id="{{ feature }}" name="{{ feature }}" required step ="0.001"><br><br>
-            {% endfor %}
+        <!-- Your form here -->
+        <form method="POST" action="/predict">
+            <label for="Sio2">Sio2:</label>
+            <input type="number" name="Sio2" id="Sio2" required><br>
+
+            <label for="Al203">Al203:</label>
+            <input type="number" name="Al203" id="Al203" required><br>
+
+            <label for="Fe203">Fe203:</label>
+            <input type="number" name="Fe203" id="Fe203" required><br>
+
+            <label for="Cao">Cao:</label>
+            <input type="number" name="Cao" id="Cao" required><br>
+
+            <label for="Mgo">Mgo:</label>
+            <input type="number" name="Mgo" id="Mgo" required><br>
+
+            <label for="So3">So3:</label>
+            <input type="number" name="So3" id="So3" required><br>
+
+            <label for="Na2o">Na2o:</label>
+            <input type="number" name="Na2o" id="Na2o" required><br>
+
+            <label for="K2o">K2o:</label>
+            <input type="number" name="K2o" id="K2o" required><br>
+
+            <label for="Cl">Cl:</label>
+            <input type="number" name="Cl" id="Cl" required><br>
+
+            <label for="Sm">Sm:</label>
+            <input type="number" name="Sm" id="Sm" required><br>
+
+            <label for="Am">Am:</label>
+            <input type="number" name="Am" id="Am" required><br>
+
+            <label for="Loi">Loi:</label>
+            <input type="number" name="Loi" id="Loi" required><br>
+
             <input type="submit" value="Predict">
         </form>
 
-        {% if result %}
+        {% if prediction %}
         <div class="result">
-            <h2>Result: {{ result }}</h2>
+            <p>Prediction: {{ prediction }}</p>
+            <p>Result: {{ result }}</p>
         </div>
         {% endif %}
     </div>
